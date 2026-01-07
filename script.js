@@ -143,64 +143,12 @@ document.addEventListener('DOMContentLoaded', function() {
     statItems.forEach(item => statsObserver.observe(item));
     
     // ================================
-    // Mobile Menu Toggle (if needed in future)
+    // Dynamic Copyright Year
     // ================================
     
-    // Placeholder for mobile navigation if header navigation is added
-    
-    // ================================
-    // Form Validation (for when Google Form is integrated)
-    // ================================
-    
-    // This is a placeholder for future form integration
-    // When the Google Form is embedded, you can add validation here
-    
-    // ================================
-    // Performance Optimization
-    // ================================
-    
-    // Debounce function for scroll events
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
-    
-    // Apply debounce to scroll handler if needed for performance
-    const debouncedScroll = debounce(() => {
-        // Additional scroll-based logic can go here
-    }, 100);
-    
-    window.addEventListener('scroll', debouncedScroll);
-    
-    // ================================
-    // Lazy Loading for Future Images
-    // ================================
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        imageObserver.unobserve(img);
-                    }
-                }
-            });
-        });
-        
-        // Observe all images with data-src attribute
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
-        });
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
     }
     
     // ================================
