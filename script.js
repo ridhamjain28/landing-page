@@ -3,8 +3,17 @@
 // ================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    // #region agent log - Hypothesis A: DOMContentLoaded
+    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:6',message:'DOMContentLoaded fired',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
+    
     // Smooth scroll for anchor links
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#beta-form"])');
+    
+    // #region agent log - Hypothesis B: Check beta-form target
+    const betaFormExists = document.getElementById('beta-form');
+    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:14',message:'beta-form element check',data:{exists:!!betaFormExists},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
     
     smoothScrollLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -49,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Observe all cards and sections for scroll animations
     const animateElements = document.querySelectorAll('.problem-card, .feature-card, .benefit-item, .audience-card');
+    
+    // #region agent log - Hypothesis C: Animation elements found
+    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:62',message:'Animation elements found',data:{count:animateElements.length},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
     
     animateElements.forEach((el, index) => {
         // Set initial state
@@ -140,6 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.5 });
     
     const statItems = document.querySelectorAll('.stat-item');
+    // #region agent log - Hypothesis E: Stat items found
+    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:156',message:'Stat items found',data:{count:statItems.length},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'E'})}).catch(()=>{});
+    // #endregion
     statItems.forEach(item => statsObserver.observe(item));
     
     // ================================
@@ -147,6 +163,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // ================================
     
     const yearElement = document.getElementById('current-year');
+    // #region agent log - Hypothesis D: Year element check
+    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:166',message:'Year element check',data:{exists:!!yearElement,year:new Date().getFullYear()},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'D'})}).catch(()=>{});
+    // #endregion
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
@@ -158,6 +177,10 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c🚀 Startsphere Landing Page', 'font-size: 20px; font-weight: bold; color: #667eea;');
     console.log('%cThe digital trail for every team\'s effort', 'font-size: 14px; color: #6b7280;');
     console.log('%cInterested in beta testing? Click any "Join Beta Testing" button!', 'font-size: 12px; color: #764ba2;');
+    
+    // #region agent log - Script completed
+    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:182',message:'Script initialization complete',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
 });
 
 // ================================
