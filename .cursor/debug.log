@@ -1,0 +1,156 @@
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767893311918,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767893311928,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":false},"timestamp":1767893311920,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767893311922,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":3},"timestamp":1767893311924,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767893311926,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767893331065,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":false},"timestamp":1767893331067,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767893331068,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":3},"timestamp":1767893331070,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767893331072,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767893331073,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":3},"timestamp":1767893424579,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767893424564,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767893424568,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767893424566,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767893424582,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767893424584,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767893463440,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767893463444,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767893463442,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":3},"timestamp":1767893463458,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767893463462,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767893463468,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767893702852,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767893702849,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":3},"timestamp":1767893702847,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767893702842,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767893702838,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767893702840,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767903784130,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767903784128,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767903784140,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":3},"timestamp":1767903784144,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767903784151,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767903784146,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905423474,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905423470,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767905423478,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905423485,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905423487,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905423490,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905447439,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905447441,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905447451,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":22},"timestamp":1767905447443,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905447446,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905447448,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905456219,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905456220,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767905456222,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905456225,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905456227,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905456228,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767905480885,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905480883,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905480880,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905480892,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905480890,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905480889,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905503341,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905503340,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":18},"timestamp":1767905503343,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905503347,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905503350,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905503348,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905536941,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":15},"timestamp":1767905536946,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905536945,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905536948,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905536950,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905536961,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905563720,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767905563726,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905563728,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905563731,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905563729,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905563724,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905584408,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905584419,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905584410,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767905584412,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905584415,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905584431,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905605283,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905605289,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905605291,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905605292,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905605285,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767905605286,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767905629239,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767905629246,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767905629248,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767905629270,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767905629253,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767905629255,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906039688,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906039679,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906039682,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906039675,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906039691,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906039696,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906130875,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906130878,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906130882,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906130880,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906130883,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906130884,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906131789,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906131790,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906131795,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906131797,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906131798,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906131793,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906134587,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906134594,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906134597,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906134600,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906134601,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906134603,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906136267,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906136274,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906136276,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906136278,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906136269,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906136271,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906180245,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906180247,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906180251,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906180256,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906180261,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906180264,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906314661,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906314678,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906314664,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906314680,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906314667,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906314684,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906402909,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906402910,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906402912,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906402914,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906402915,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906402916,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906411946,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906411948,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906411951,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906411955,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906411949,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906411953,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:6","message":"DOMContentLoaded fired","data":{},"timestamp":1767906422794,"sessionId":"debug-session","hypothesisId":"A"}
+{"location":"script.js:14","message":"beta-form element check","data":{"exists":true},"timestamp":1767906422796,"sessionId":"debug-session","hypothesisId":"B"}
+{"location":"script.js:62","message":"Animation elements found","data":{"count":14},"timestamp":1767906422797,"sessionId":"debug-session","hypothesisId":"C"}
+{"location":"script.js:156","message":"Stat items found","data":{"count":0},"timestamp":1767906422799,"sessionId":"debug-session","hypothesisId":"E"}
+{"location":"script.js:166","message":"Year element check","data":{"exists":true,"year":2026},"timestamp":1767906422800,"sessionId":"debug-session","hypothesisId":"D"}
+{"location":"script.js:182","message":"Script initialization complete","data":{},"timestamp":1767906422802,"sessionId":"debug-session","hypothesisId":"A"}

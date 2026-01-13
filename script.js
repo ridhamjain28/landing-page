@@ -2,34 +2,25 @@
 // Smooth Scroll Functionality
 // ================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    // #region agent log - Hypothesis A: DOMContentLoaded
-    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:6',message:'DOMContentLoaded fired',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
-    
+document.addEventListener('DOMContentLoaded', function () {
     // Smooth scroll for anchor links
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#beta-form"])');
-    
-    // #region agent log - Hypothesis B: Check beta-form target
-    const betaFormExists = document.getElementById('beta-form');
-    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:14',message:'beta-form element check',data:{exists:!!betaFormExists},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'B'})}).catch(()=>{});
-    // #endregion
-    
+
     smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             // Skip if it's just '#'
             if (href === '#') return;
-            
+
             e.preventDefault();
-            
+
             const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 const offsetTop = targetElement.offsetTop - 20; // 20px offset for better visibility
-                
+
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -37,16 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // ================================
     // Intersection Observer for Animations
     // ================================
-    
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -55,35 +46,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
+
     // Observe all cards and sections for scroll animations
-    const animateElements = document.querySelectorAll('.problem-card, .feature-card, .benefit-item, .audience-card');
-    
-    // #region agent log - Hypothesis C: Animation elements found
-    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:62',message:'Animation elements found',data:{count:animateElements.length},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'C'})}).catch(()=>{});
-    // #endregion
-    
+    const animateElements = document.querySelectorAll('.problem-card, .feature-card, .benefit-item, .audience-card, .testimonial-card, .faq-item');
+
     animateElements.forEach((el, index) => {
         // Set initial state
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
-        
+
         // Observe element
         observer.observe(el);
     });
-    
+
     // ================================
     // CTA Click Tracking (for future analytics)
     // ================================
-    
+
     const ctaButtons = document.querySelectorAll('.btn-primary');
-    
+
     ctaButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             // For now, just log. In production, send to analytics
             console.log('CTA clicked:', this.textContent.trim());
-            
+
             // If it's a beta form link, you can add additional tracking here
             if (this.getAttribute('href') === '#beta-form') {
                 console.log('Beta form CTA clicked - ready for Google Form integration');
@@ -95,20 +82,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // ================================
     // Scroll Progress Indicator (subtle)
     // ================================
-    
+
     let scrollProgress = 0;
-    
+
     window.addEventListener('scroll', () => {
         const windowHeight = window.innerHeight;
         const documentHeight = document.documentElement.scrollHeight;
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
-        
+
         // Can be used to show a progress bar or change header behavior
         // For now, we'll use it to add a class to body when scrolled
         if (scrollTop > 100) {
@@ -117,16 +104,16 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.remove('scrolled');
         }
     });
-    
+
     // ================================
     // Dynamic Stats Counter (optional enhancement)
     // ================================
-    
+
     function animateCounter(element, target, duration = 2000) {
         const start = 0;
         const increment = target / (duration / 16); // 60fps
         let current = start;
-        
+
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
@@ -137,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 16);
     }
-    
+
     // Animate stats when they come into view
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -151,36 +138,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     const statItems = document.querySelectorAll('.stat-item');
-    // #region agent log - Hypothesis E: Stat items found
-    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:156',message:'Stat items found',data:{count:statItems.length},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'E'})}).catch(()=>{});
-    // #endregion
     statItems.forEach(item => statsObserver.observe(item));
-    
+
     // ================================
     // Dynamic Copyright Year
     // ================================
-    
+
     const yearElement = document.getElementById('current-year');
-    // #region agent log - Hypothesis D: Year element check
-    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:166',message:'Year element check',data:{exists:!!yearElement,year:new Date().getFullYear()},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'D'})}).catch(()=>{});
-    // #endregion
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
-    
+
     // ================================
     // Console Message
     // ================================
-    
+
     console.log('%c🚀 Startsphere Landing Page', 'font-size: 20px; font-weight: bold; color: #667eea;');
     console.log('%cThe digital trail for every team\'s effort', 'font-size: 14px; color: #6b7280;');
     console.log('%cInterested in beta testing? Click any "Join Beta Testing" button!', 'font-size: 12px; color: #764ba2;');
-    
-    // #region agent log - Script completed
-    fetch('http://127.0.0.1:7245/ingest/b880f3ca-550d-4e7a-ba6a-1dbec35b6ec8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:182',message:'Script initialization complete',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
+
 });
 
 // ================================

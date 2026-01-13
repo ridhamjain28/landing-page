@@ -4,22 +4,29 @@
    ====================================== */
 :root {
     /* Base Backgrounds - Deep Space Navy */
-    --color-bg-main: #020617;       /* Almost black */
-    --color-bg-secondary: #0f172a;  /* Dark Slate for sections */
-    --color-bg-card: #1e293b;       /* Slightly lighter for cards */
+    --color-bg-main: #020617;
+    /* Almost black */
+    --color-bg-secondary: #0f172a;
+    /* Dark Slate for sections */
+    --color-bg-card: #1e293b;
+    /* Slightly lighter for cards */
 
     /* Text Colors - High Contrast */
-    --color-text-main: #f8fafc;     /* Pure White/Off-White */
-    --color-text-muted: #94a3b8;    /* Readable Light Gray */
+    --color-text-main: #f8fafc;
+    /* Pure White/Off-White */
+    --color-text-muted: #94a3b8;
+    /* Readable Light Gray */
 
     /* Accents */
-    --color-primary: #3b82f6;       /* Vibrant Blue */
+    --color-primary: #3b82f6;
+    /* Vibrant Blue */
     --color-primary-dark: #2563eb;
     --color-primary-light: rgba(59, 130, 246, 0.15);
-    --color-accent: #f59e0b;        /* Amber for "Beta" urgency */
+    --color-accent: #f59e0b;
+    /* Amber for "Beta" urgency */
     --color-accent-soft: rgba(245, 158, 11, 0.2);
     --color-success: #10b981;
-    
+
     /* Borders */
     --border-color: rgba(255, 255, 255, 0.1);
     --border-color-strong: rgba(255, 255, 255, 0.2);
@@ -76,16 +83,32 @@ body {
 /* ======================================
    Typography
    ====================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--color-text-main);
     font-weight: 700;
     line-height: 1.2;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.35rem; }
+h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.35rem;
+}
 
 p {
     margin-bottom: var(--spacing-sm);
@@ -182,8 +205,8 @@ section {
     align-items: center;
     position: relative;
     background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15), transparent 32%),
-                radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.1), transparent 30%),
-                linear-gradient(135deg, var(--color-bg-main) 0%, var(--color-bg-secondary) 100%);
+        radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.1), transparent 30%),
+        linear-gradient(135deg, var(--color-bg-main) 0%, var(--color-bg-secondary) 100%);
     overflow: hidden;
 }
 
@@ -342,10 +365,19 @@ section {
     gap: var(--spacing-lg);
 }
 
-.problem-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.features-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.audience-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.beta-benefits { 
+.problem-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.audience-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.beta-benefits {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
     max-width: 900px;
@@ -534,7 +566,7 @@ section {
     color: #fff;
 }
 
-.final-cta-content > p,
+.final-cta-content>p,
 .urgency-text {
     color: rgba(255, 255, 255, 0.9);
 }
@@ -562,7 +594,7 @@ section {
     margin-bottom: var(--spacing-sm);
 }
 
-.beta-form-content > p {
+.beta-form-content>p {
     color: var(--color-text-muted);
     margin-bottom: var(--spacing-xl);
 }
@@ -669,42 +701,302 @@ section {
    Animations
    ====================================== */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-24px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================
+   Trust Badges Section
+   ====================================== */
+.trust-badges-section {
+    background: var(--color-bg-main);
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+}
+
+.trust-badge-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    color: var(--color-text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.trust-badge-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+}
+
+.trust-icon {
+    font-size: 1.2rem;
+}
+
+/* ======================================
+   Testimonials Section
+   ====================================== */
+.testimonials-section {
+    background: var(--color-bg-secondary);
+    padding: var(--spacing-3xl) 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.testimonial-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-quote {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--color-text-main);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.testimonial-quote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: -5px;
+    font-size: 3rem;
+    color: var(--color-primary);
+    opacity: 0.3;
+    font-family: Georgia, serif;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.testimonial-title {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* ======================================
+   FAQ Section
+   ====================================== */
+.faq-section {
+    background: var(--color-bg-main);
+    padding: var(--spacing-3xl) 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--color-bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+}
+
+.faq-question {
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.faq-question::before {
+    content: '?';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.faq-answer {
+    color: var(--color-text-muted);
+    padding-left: calc(24px + var(--spacing-xs));
+    line-height: 1.6;
 }
 
 /* ======================================
    Responsive
    ====================================== */
 @media (max-width: 992px) {
-    section { padding: 4rem 0; }
+    section {
+        padding: 4rem 0;
+    }
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: clamp(2rem, 4vw, 2.5rem); }
-    h2 { font-size: 1.9rem; }
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    h1 {
+        font-size: clamp(2.2rem, 5vw, 2.8rem);
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
     .hero-cta {
         flex-direction: column;
+        width: 100%;
     }
-    .btn { width: 100%; max-width: 320px; }
+
+    .btn {
+        width: 100%;
+        max-width: 100%;
+        /* Full width on mobile */
+    }
+
     .beta-benefits {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
+
+    /* Better grid for badges on mobile instead of long stack */
+    .trust-badges {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .trust-badge-item {
+        justify-content: center;
+        font-size: 0.85rem;
+    }
+
+    .testimonials-grid,
+    .faq-grid,
+    .problem-grid,
+    .features-grid,
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        margin-bottom: var(--spacing-lg);
+    }
 }
 
 @media (max-width: 480px) {
-    section { padding: 3rem 0; }
-    .hero { padding-top: 1rem; }
-    h1 { font-size: 2rem; }
-    .hero-tagline { font-size: 1.3rem; }
-    .beta-benefits {
+    section {
+        padding: 3rem 0;
+    }
+
+    .hero {
+        padding-top: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .brand-name {
+        font-size: 2.5rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.25rem;
+    }
+
+    /* Stack badges fully on very small screens if needed, or keep 2-col */
+    .trust-badges {
         grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 }
 
@@ -712,6 +1004,7 @@ section {
    Print
    ====================================== */
 @media print {
+
     .beta-badge,
     .btn,
     .hero-cta,
@@ -719,5 +1012,8 @@ section {
     .final-cta-section {
         display: none;
     }
-    section { page-break-inside: avoid; }
+
+    section {
+        page-break-inside: avoid;
+    }
 }
