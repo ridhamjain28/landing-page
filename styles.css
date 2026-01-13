@@ -1017,3 +1017,31 @@ section {
         page-break-inside: avoid;
     }
 }
+
+/* ======================================
+   Sticky Mobile CTA
+   ====================================== */
+.mobile-sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg-main);
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .mobile-sticky-cta {
+        display: block;
+        animation: fadeInUp 0.5s ease-out;
+    }
+
+    /* Add padding to body so footer content isn't covered */
+    body {
+        padding-bottom: 80px;
+    }
+}
