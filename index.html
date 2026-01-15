@@ -82,59 +82,54 @@
                     <p class="section-subtitle text-max">Perfect for when your work needs to be undeniable</p>
                 </div>
 
-                <div class="carousel-wrapper">
-                    <button class="stack-prev-btn" id="prevCardBtn" aria-label="Previous Card">
-                        <i data-lucide="chevron-left"></i>
-                    </button>
-
-                    <div class="stack-carousel-container" id="stackCarousel">
-                        <!-- Card 1 (Front) -->
-                        <div class="stack-card">
-                            <div class="card-icon-circle">
-                                <i data-lucide="graduation-cap"></i>
+                <div class="stack-carousel-container">
+                    <div class="stack-wrapper">
+                        <div class="stack-cards">
+                            <!-- Card 1: College Projects -->
+                            <div class="stack-card" data-index="0">
+                                <div class="stack-card-content">
+                                    <div class="stack-icon"><i data-lucide="graduation-cap"></i></div>
+                                    <h3>College Projects</h3>
+                                    <p>Grades don't reflect effort? We verify your specific contributions so professors
+                                        see your actual work.</p>
+                                </div>
                             </div>
-                            <h3>College Projects</h3>
-                            <p>Grades don't reflect effort? We verify your specific contributions so professors see your
-                                actual work.</p>
-                            <div class="card-glow"></div>
+
+                            <!-- Card 2: Competitions -->
+                            <div class="stack-card" data-index="1">
+                                <div class="stack-card-content">
+                                    <div class="stack-icon"><i data-lucide="trophy"></i></div>
+                                    <h3>Competitions</h3>
+                                    <p>Judges can't tell who built what? Provide undeniable proof of features to settle
+                                        disputes instantly.</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: Student Clubs -->
+                            <div class="stack-card" data-index="2">
+                                <div class="stack-card-content">
+                                    <div class="stack-icon"><i data-lucide="users"></i></div>
+                                    <h3>Student Clubs</h3>
+                                    <p>Leadership goes unnoticed? Track your specific contributions to prove your impact
+                                        to future employers.</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 4: Portfolio Building -->
+                            <div class="stack-card" data-index="3">
+                                <div class="stack-card-content">
+                                    <div class="stack-icon"><i data-lucide="briefcase"></i></div>
+                                    <h3>Portfolio Building</h3>
+                                    <p>Can't prove you coded it? Generate a "Proof of Work" link that recruiters trust.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Card 2 -->
-                        <div class="stack-card">
-                            <div class="card-icon-circle">
-                                <i data-lucide="trophy"></i>
-                            </div>
-                            <h3>Competitions</h3>
-                            <p>Judges can't tell who built what? Provide undeniable proof of features to settle disputes
-                                instantly.</p>
-                            <div class="card-glow"></div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="stack-card">
-                            <div class="card-icon-circle">
-                                <i data-lucide="users"></i>
-                            </div>
-                            <h3>Student Clubs</h3>
-                            <p>Leadership goes unnoticed? Track your specific contributions to prove your impact to
-                                future employers.</p>
-                            <div class="card-glow"></div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="stack-card">
-                            <div class="card-icon-circle">
-                                <i data-lucide="briefcase"></i>
-                            </div>
-                            <h3>Portfolio Building</h3>
-                            <p>Can't prove you coded it? Generate a "Proof of Work" link that recruiters trust.</p>
-                            <div class="card-glow"></div>
-                        </div>
+                        <button class="stack-next-btn" id="stackNextBtn" aria-label="Next Card">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
                     </div>
-
-                    <button class="stack-next-btn" id="nextCardBtn" aria-label="Next Card">
-                        <i data-lucide="chevron-right"></i>
-                    </button>
                 </div>
             </div>
         </section>

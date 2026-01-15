@@ -213,65 +213,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ================================
-    // Infinite Stacking Carousel (Bidirectional)
+    // Infinite Stacking Carousel
     // ================================
-    const stackContainer = document.getElementById('stackCarousel');
-    const nextBtn = document.getElementById('nextCardBtn');
-    const prevBtn = document.getElementById('prevCardBtn');
+    const stackCards = Array.from(document.querySelectorAll('.stack-card'));
+    const stackNextBtn = document.getElementById('stackNextBtn');
 
-    if (stackContainer && nextBtn && prevBtn) {
-        let isAnimating = false;
+    if (stackCards.length > 0 && stackNextBtn) {
+        // Internal state of positions [0, 1, 2, 3...]
+        let cardIndices = stackCards.map((_, i) => i);
 
-        // Next Button (Forward Shuffle)
-        nextBtn.addEventListener('click', () => {
-            if (isAnimating) return;
-            isAnimating = true;
+        stackNextBtn.addEventListener('click', () => {
+            // 1. Animate Front Card Out
+            const frontCardIndex = cardIndices[0];
+            const frontCard = stackCards[frontCardIndex];
 
-            const cards = stackContainer.querySelectorAll('.stack-card');
-            if (cards.length > 0) {
-                const frontCard = cards[0];
-                frontCard.classList.add('exit');
+            frontCard.classList.add('exit-animation');
 
-                setTimeout(() => {
-                    stackContainer.appendChild(frontCard);
-                    frontCard.classList.remove('exit');
-                    isAnimating = false;
-                    if (window.lucide) window.lucide.createIcons();
-                }, 400);
-            }
+            // 2. Wait for animation, then rotate
+            setTimeout(() => {
+                frontCard.classList.remove('exit-animation');
+
+                // Rotate array: First becomes last
+                const first = cardIndices.shift();
+                cardIndices.push(first);
+
+                // 3. Update DOM attributes to reflect new positions
+                updateStackPositions();
+            }, 300); // 300ms matches halfway through CSS transition for smoothness
         });
 
-        // Previous Button (Reverse Shuffle)
-        prevBtn.addEventListener('click', () => {
-            if (isAnimating) return;
-            isAnimating = true;
+        function updateStackPositions() {
+            cardIndices.forEach((cardIndex, posIndex) => {
+                const card = stackCards[cardIndex];
+                card.setAttribute('data-pos', posIndex);
 
-            const cards = stackContainer.querySelectorAll('.stack-card');
-            if (cards.length > 0) {
-                const lastCard = cards[cards.length - 1];
-
-                // 1. Setup: Position off-screen left using class
-                lastCard.classList.add('enter-left');
-
-                // 2. Move to front of DOM (becomes visual front due to CSS :nth-child(1))
-                // However, 'enter-left' overrides the transform to keep it off-screen
-                stackContainer.prepend(lastCard);
-
-                // 3. Force Reflow to ensure 'enter-left' is applied before removing
-                void lastCard.offsetWidth;
-
-                // 4. Animate In (Remove 'enter-left', transitions to :nth-child(1) styles)
-                requestAnimationFrame(() => {
-                    lastCard.classList.remove('enter-left');
-                });
-
-                // 5. Cleanup
-                setTimeout(() => {
-                    isAnimating = false;
-                    if (window.lucide) window.lucide.createIcons();
-                }, 400); // Wait for transition
-            }
-        });
+                // Ensure z-index follows position (lower pos = higher z)
+                // CSS handles z-index, but we can enforce if needed. 
+                // data-pos handling in CSS is sufficient.
+            });
+        }
     }
 
     // ================================
