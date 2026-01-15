@@ -213,6 +213,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ================================
+    // Infinite Stacking Carousel
+    // ================================
+    const stackContainer = document.getElementById('stackCarousel');
+    const nextBtn = document.getElementById('nextCardBtn');
+
+    if (stackContainer && nextBtn) {
+        // Prevent rapid clicks
+        let isAnimating = false;
+
+        nextBtn.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const cards = stackContainer.querySelectorAll('.stack-card');
+            if (cards.length > 0) {
+                const frontCard = cards[0];
+
+                // 1. Animate Out
+                frontCard.classList.add('exit');
+
+                // 2. Move to Back after transition
+                setTimeout(() => {
+                    stackContainer.appendChild(frontCard);
+                    frontCard.classList.remove('exit');
+                    // Reset styling/state if needed
+                    isAnimating = false;
+
+                    // Refresh Lucide icons if needed (though DOM move usually keeps them)
+                    if (window.lucide) window.lucide.createIcons();
+                }, 400); // Matches .stack-card.exit transition duration
+            }
+        });
+    }
+
+    // ================================
     // Console Message
     // ================================
 
