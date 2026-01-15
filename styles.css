@@ -1225,9 +1225,9 @@ section {
     }
 }
 
-/* Testimonials (Unhide & Style) */
+/* Testimonials (Hidden as per user request) */
 #testimonials {
-    display: block !important;
+    display: none !important;
 }
 
 .testimonial-card {
