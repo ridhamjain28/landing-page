@@ -1019,6 +1019,38 @@ section {
 }
 
 /* ======================================
+   Product Images
+   ====================================== */
+.hero-image-container {
+    margin-top: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal);
+}
+
+.feature-card:hover .feature-image {
+    transform: scale(1.02);
+}
+
+/* ======================================
    Sticky Mobile CTA
    ====================================== */
 .mobile-sticky-cta {
