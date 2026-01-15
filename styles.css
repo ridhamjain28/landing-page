@@ -418,8 +418,21 @@ section {
 .audience-emoji,
 .feature-icon,
 .benefit-icon {
-    font-size: 2.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+    /* Default icon color */
+}
+
+.problem-icon svg,
+.audience-emoji svg,
+.feature-icon svg,
+.benefit-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke-width: 1.5;
 }
 
 .problem-card h3,
@@ -762,7 +775,14 @@ section {
 }
 
 .trust-icon {
-    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.trust-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    stroke-width: 2;
 }
 
 /* ======================================
@@ -1144,13 +1164,19 @@ section {
 }
 
 .compact-card .problem-icon {
-    font-size: 1.5rem;
     padding: 0;
     background: none;
     width: auto;
     height: auto;
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+}
+
+.compact-card .problem-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke-width: 2;
+    color: var(--color-primary);
 }
 
 /* Solution Info Bar */
