@@ -1534,30 +1534,39 @@ section {
 }
 
 /* Position States */
+/* Position States */
 .stack-card[data-pos="0"] {
     z-index: 10;
-    transform: scale(1) translateY(0);
+    transform: scale(1) translate(0, 0);
     opacity: 1;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    /* Blue Glow */
+    border-color: var(--color-primary);
 }
 
 .stack-card[data-pos="1"] {
     z-index: 9;
-    transform: scale(0.95) translateY(10px);
-    opacity: 0.8;
+    transform: scale(0.95) translate(20px, -20px);
+    /* Up and Right */
+    opacity: 0.6;
+    box-shadow: var(--shadow-sm);
 }
 
 .stack-card[data-pos="2"] {
     z-index: 8;
-    transform: scale(0.90) translateY(20px);
-    opacity: 0.6;
+    transform: scale(0.90) translate(40px, -40px);
+    /* Further Up and Right */
+    opacity: 0.3;
+    box-shadow: none;
 }
 
 .stack-card[data-pos="3"] {
     z-index: 7;
-    transform: scale(0.85) translateY(30px);
+    transform: scale(0.85) translate(60px, -60px);
     opacity: 0;
     /* Hidden */
     pointer-events: none;
+    box-shadow: none;
 }
 
 /* Exit Animation */
