@@ -1077,3 +1077,8 @@ section {
         padding-bottom: 80px;
     }
 }
+
+/* Remove testimonial quotes */
+.testimonial-quote::before {
+    content: none !important;
+}
