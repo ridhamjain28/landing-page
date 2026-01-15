@@ -10,6 +10,9 @@
     /* Dark Slate for sections */
     --color-bg-card: #1e293b;
     /* Slightly lighter for cards */
+    --surface-color: var(--color-bg-card);
+    --surface-color-hover: #334155;
+    /* Lighter slate */
 
     /* Text Colors - High Contrast */
     --color-text-main: #f8fafc;
