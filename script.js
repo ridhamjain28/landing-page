@@ -194,6 +194,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ================================
+    // Spotlight Effect (Premium Hover)
+    // ================================
+    const spotlightCards = document.querySelectorAll('.spotlight-card, .feature-row, .audience-card, .compact-card, .benefit-item'); // Auto-target these
+
+    spotlightCards.forEach(card => {
+        // Ensure they have the class for CSS targeting if not already
+        card.classList.add('spotlight-card');
+
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // ================================
     // Console Message
     // ================================
 

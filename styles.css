@@ -1343,3 +1343,111 @@ section {
     color: var(--text-color-tertiary);
     margin-bottom: 4px;
 }
+
+/* ========================================= */
+/*       PREMIUM ANIMATIONS                  */
+/* ========================================= */
+
+/* 1. Sticky Stacking (Deck Effect) */
+.features-list {
+    position: relative;
+    /* Ensure container allows sticky children */
+}
+
+.feature-row {
+    position: sticky;
+    top: 100px;
+    /* Stick offset from viewport top */
+    background: var(--surface-color);
+    /* Solid background to cover cards below */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-xxl);
+    /* Spacing for natural scroll flow */
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Ensure it looks like a card */
+}
+
+/* Ensure subsequent cards have higher stacking context if needed (default DOM order usually works for sticky) */
+.feature-row:nth-child(1) {
+    top: 120px;
+}
+
+.feature-row:nth-child(2) {
+    top: 140px;
+}
+
+.feature-row:nth-child(3) {
+    top: 160px;
+}
+
+.feature-row:nth-child(4) {
+    top: 180px;
+}
+
+/* 2. Spotlight Glow (Hover Effect) */
+.spotlight-card {
+    overflow: hidden;
+    /* Contain the glow */
+}
+
+/* Only apply relative positioning to non-sticky cards to avoid breaking sticky behavior */
+.spotlight-card:not(.feature-row) {
+    position: relative;
+}
+
+/* The Glow Overlay */
+.spotlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(255, 255, 255, 0.06),
+            transparent 40%);
+    z-index: 3;
+    /* Above content? Or backdrop? Usually backdrop. 
+                   If content has z-index, this might overlay it. 
+                   Let's use pointer-events: none to not block interaction. */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.spotlight-card:hover::before {
+    opacity: 1;
+}
+
+/* Dark mode specific glow adjustment if needed */
+@media (prefers-color-scheme: light) {
+    .spotlight-card::before {
+        background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(0, 0, 0, 0.05),
+                transparent 40%);
+    }
+}
+
+/* Mobile: Disable Sticky */
+@media (max-width: 768px) {
+    .feature-row {
+        position: relative;
+        top: auto !important;
+        margin-bottom: var(--spacing-xl);
+        background: transparent;
+        /* Option: remove card style on mobile? Or keep card style? 
+                                    Keeping card style is better for consistency. */
+        background: var(--surface-color);
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .feature-row.reverse {
+        flex-direction: column-reverse;
+    }
+}
