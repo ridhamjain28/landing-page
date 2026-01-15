@@ -374,12 +374,16 @@
                 <div class="beta-form-content">
                     <h2>Secure Your Beta Spot</h2>
                     <p class="text-max">Enter your email. We'll send your beta invite within 24 hours.</p>
-                    <form class="signup-form"
-                        onsubmit="event.preventDefault(); alert('Thank you for your interest! Beta invitations will be sent soon.'); this.reset();">
+                    <form class="signup-form" id="betaSignup">
+                        <input type="hidden" name="access_key" value="c598279b-87b0-46c4-a5ca-b1da8cd32fbd">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                         <div class="form-group">
                             <input type="email" id="email" name="email" placeholder="Enter your college email" required>
                             <button type="submit" class="btn btn-primary">Get Early Access</button>
                         </div>
+                        <div id="formResult" class="form-result"
+                            style="display: none; margin-top: 1rem; font-weight: 500;"></div>
                         <p class="form-note">Free during beta • No credit card • Unsubscribe anytime</p>
                     </form>
                 </div>

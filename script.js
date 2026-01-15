@@ -73,12 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // If it's a beta form link, you can add additional tracking here
             if (this.getAttribute('href') === '#beta-form') {
-                console.log('Beta form CTA clicked - ready for Google Form integration');
-                // TODO: Replace with actual Google Form URL
-                // For now, show an alert
-                setTimeout(() => {
-                    alert('Beta testing form will be integrated here. Thank you for your interest in Startsphere!');
-                }, 100);
+                console.log('Beta form CTA clicked');
             }
         });
     });
@@ -149,6 +144,53 @@ document.addEventListener('DOMContentLoaded', function () {
     const yearElement = document.getElementById('current-year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
+    }
+
+    // ================================
+    // Beta Form Handling (Web3Forms)
+    // ================================
+    const form = document.getElementById('betaSignup');
+    const result = document.getElementById('formResult');
+
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            result.style.display = 'block';
+            result.innerHTML = 'Sending...';
+            result.style.color = 'var(--text-color-primary)';
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = 'Check your inbox – your beta invite is on the way within 24 hours! 🚀';
+                        result.style.color = '#10b981'; // Success Green
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                        result.style.color = '#ef4444'; // Error Red
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = 'Something went wrong!';
+                    result.style.color = '#ef4444';
+                })
+                .then(function () {
+                    form.reset();
+                });
+        });
     }
 
     // ================================
