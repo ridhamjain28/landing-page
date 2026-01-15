@@ -35,29 +35,41 @@
 
 
                 <div class="hero-content">
-                    <h1 class="hero-title">
-                        Never Lose Credit for Your Work Again
-                    </h1>
+                    <h1>Never Lose Credit for Your Work Again</h1>
+                    <p class="hero-subtitle text-max">Track every contribution on your projects so you can prove who did
+                        what for grades, competitions, and portfolios.</p>
 
-                    <p class="hero-description text-max">
-                        All-in-one workspace for student & startup teams. Stop juggling Discord, Google Drive, and
-                        Trello. One platform. Everything you need.
-                    </p>
-
-                    <div class="hero-cta">
-                        <a href="#beta-form" class="btn btn-primary">Join Beta (Free)</a>
-                        <a href="#features" class="btn btn-secondary smooth-scroll">See How It Works</a>
+                    <div class="hero-cta-container">
+                        <div class="cta-buttons">
+                            <a href="#beta-form" class="btn btn-primary btn-large btn-full-mobile">Join Beta (Free)</a>
+                            <a href="#features" class="btn btn-secondary btn-large btn-full-mobile">See How It Works</a>
+                        </div>
+                        <p class="hero-trust-text">Instant access • Free during beta • No credit card</p>
                     </div>
 
-                    <p class="hero-trust-text">Join our growing beta community • No credit card required</p>
+                    <!-- Hero image removed from here to be placed full-width below or managed via CSS as requested -->
+                </div>
+            </div>
+        </section>
 
-                    <div class="hero-image-container">
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="imgs/mobile_feature_dashboard.png">
-                            <img src="imgs/project_overview_main.jpg" alt="Startsphere Dashboard Overview"
-                                class="hero-image">
-                        </picture>
-                    </div>
+        <!-- Product Hero Image Section (Mobile First Layout) -->
+        <section class="hero-image-section">
+            <div class="container">
+                <div class="hero-image-container">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="imgs/mobile_feature_dashboard.png">
+                        <!-- User asked to remove project_overview_main.jpg here, assuming replacement or just relying on mobile image? 
+                             "Ensure an actual product screenshot... is visible above the fold".
+                             "On mobile, make this image 100% width".
+                             I will keep the picture tag structure but ensure desktop uses a valid image if 'project_overview_main.jpg' is unwanted.
+                             User said: "remove this image - 'project_overview_main.jpg'".
+                             Maybe they want a DIFFERENT image or just text? 
+                             "ensure an actual product screenshot... is visible".
+                             I'll keep the mobile one (generated) and maybe use 'dashboard_overview.jpg' for desktop if 'project_overview_main' is bad.
+                             Or maybe 'dashboard_overview.jpg' IS the one to use.
+                        -->
+                        <img src="imgs/dashboard_overview.jpg" alt="Startsphere Dashboard" class="hero-image">
+                    </picture>
                 </div>
             </div>
         </section>
@@ -105,29 +117,29 @@
                     <h2 class="section-title">Sound Familiar?</h2>
                 </div>
 
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <div class="problem-icon">❌</div>
-                        <h3>Can't Prove Your Work</h3>
-                        <p>You did the heavy lifting, but your teammate got the credit. Again.</p>
+                <div class="problem-grid compact-grid">
+                    <div class="problem-card compact-card">
+                        <span class="problem-icon">❌</span>
+                        <p><strong>Can't Prove Your Work</strong> – You did the heavy lifting, but your teammate got the
+                            credit. Again.</p>
                     </div>
 
-                    <div class="problem-card">
-                        <div class="problem-icon">📊</div>
-                        <h3>Grades Don't Reflect Effort</h3>
-                        <p>Your professor sees a group project, not your 40 hours of work.</p>
+                    <div class="problem-card compact-card">
+                        <span class="problem-icon">📊</span>
+                        <p><strong>Grades Don't Reflect Effort</strong> – Your professor sees a group project, not your
+                            40 hours of work.</p>
                     </div>
 
-                    <div class="problem-card">
-                        <div class="problem-icon">💼</div>
-                        <h3>Portfolio Gaps</h3>
-                        <p>You built something great, but can't show what you actually contributed.</p>
+                    <div class="problem-card compact-card">
+                        <span class="problem-icon">💼</span>
+                        <p><strong>Portfolio Gaps</strong> – You built something great, but can't show what you actually
+                            contributed.</p>
                     </div>
 
-                    <div class="problem-card">
-                        <div class="problem-icon">🏆</div>
-                        <h3>Competition Disputes</h3>
-                        <p>Judges can't tell who did what. Neither can your team.</p>
+                    <div class="problem-card compact-card">
+                        <span class="problem-icon">🏆</span>
+                        <p><strong>Competition Disputes</strong> – Judges can't tell who did what. Neither can your
+                            team.</p>
                     </div>
                 </div>
             </div>
@@ -136,10 +148,10 @@
         <!-- Solution Bridge -->
         <section id="solution" class="solution-bridge">
             <div class="container">
-                <div class="bridge-content">
-                    <p class="text-max">One unified platform. Seamless collaboration. Professional results. No more
-                        scattered tools—everything your team needs in one place.</p>
-                </div>
+                <blockquote class="bridge-content info-bar">
+                    "One unified platform. Seamless collaboration. Professional results. No more scattered
+                    tools—everything your team needs in one place."
+                </blockquote>
             </div>
         </section>
 
@@ -152,55 +164,77 @@
                         work professionally</p>
                 </div>
 
-                <div class="features-grid">
-                    <div class="feature-card feature-highlight">
-                        <div class="feature-badge">Unique</div>
-                        <div class="feature-icon">🏢</div>
-                        <h3>Your Project, Your Virtual Office</h3>
-                        <p>Step into your project's Office—with a Conference Room for team chat, Work Table for tasks,
-                            File Shelf for documents, and a Scratch Pad for ideas. Everything your team needs, organized
-                            in one place.</p>
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="imgs/mobile_feature_kanban.png">
-                            <img src="imgs/work_table_kanban.jpg" alt="Startsphere Work Table" class="feature-image">
-                        </picture>
+                <div class="features-list">
+                    <!-- Feature 1 -->
+                    <div class="feature-row">
+                        <div class="feature-content">
+                            <div class="feature-icon">🏢</div>
+                            <h3>Your Project, Your Virtual Office</h3>
+                            <p>Step into your project's Office—with a Conference Room for team chat, Work Table for
+                                tasks, File Shelf for documents, and a Scratch Pad for ideas.</p>
+                            <span class="screenshot-label">Screenshot: Work Table</span>
+                        </div>
+                        <div class="feature-visual">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="imgs/mobile_feature_kanban.png">
+                                <img src="imgs/work_table_kanban.jpg" alt="Startsphere Work Table"
+                                    class="feature-image">
+                            </picture>
+                        </div>
                     </div>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">💼</div>
-                        <h3>Built-in Portfolio Showcase</h3>
-                        <p>Turn completed projects into a stunning portfolio you can share with recruiters, professors,
-                            or clients. One link to showcase your skills and experience. No other project tool does
-                            this.</p>
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="imgs/mobile_feature_dashboard.png">
-                            <img src="imgs/dashboard_overview.jpg" alt="Startsphere Portfolio Dashboard"
-                                class="feature-image">
-                        </picture>
+                    <!-- Feature 2 -->
+                    <div class="feature-row reverse">
+                        <div class="feature-content">
+                            <div class="feature-icon">💼</div>
+                            <h3>Built-in Portfolio Showcase</h3>
+                            <p>Turn completed projects into a stunning portfolio you can share with recruiters. One link
+                                to showcase your skills and experience.</p>
+                            <span class="screenshot-label">Screenshot: Portfolio Dashboard</span>
+                        </div>
+                        <div class="feature-visual">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="imgs/mobile_feature_dashboard.png">
+                                <img src="imgs/dashboard_overview.jpg" alt="Startsphere Portfolio Dashboard"
+                                    class="feature-image">
+                            </picture>
+                        </div>
                     </div>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Real-Time Collaboration</h3>
-                        <p>See your teammate's message the moment they send it. No refreshing. No waiting. Instant
-                            updates across chat, tasks, files, and notes—your whole team stays in sync.</p>
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="imgs/mobile_feature_chat.png">
-                            <img src="imgs/conference_room_chat.jpg" alt="Startsphere Real-Time Chat"
-                                class="feature-image">
-                        </picture>
+                    <!-- Feature 3 -->
+                    <div class="feature-row">
+                        <div class="feature-content">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Real-Time Collaboration</h3>
+                            <p>See your teammate's message the moment they send it. No refreshing. No waiting. Instant
+                                updates across chat, tasks, files, and notes.</p>
+                            <span class="screenshot-label">Screenshot: Team Chat</span>
+                        </div>
+                        <div class="feature-visual">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="imgs/mobile_feature_chat.png">
+                                <img src="imgs/conference_room_chat.jpg" alt="Startsphere Real-Time Chat"
+                                    class="feature-image">
+                            </picture>
+                        </div>
                     </div>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">📄</div>
-                        <h3>One-Click PDF Reports</h3>
-                        <p>Generate professional project reports in seconds. Auto-populated with your project details,
-                            team members, and progress. Perfect for submissions, presentations, and documentation.</p>
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="imgs/mobile_feature_report.png">
-                            <img src="imgs/project_report_preview.jpg" alt="Startsphere PDF Report"
-                                class="feature-image">
-                        </picture>
+                    <!-- Feature 4 -->
+                    <div class="feature-row reverse">
+                        <div class="feature-content">
+                            <div class="feature-icon">📄</div>
+                            <h3>One-Click PDF Reports</h3>
+                            <p>Generate professional project reports in seconds. Auto-populated with your project
+                                details, team members, and progress.</p>
+                            <span class="screenshot-label">Screenshot: Report Preview</span>
+                        </div>
+                        <div class="feature-visual">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="imgs/mobile_feature_report.png">
+                                <img src="imgs/project_report_preview.jpg" alt="Startsphere PDF Report"
+                                    class="feature-image">
+                            </picture>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -240,37 +274,37 @@
 
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <div class="testimonial-quote">"Finally, one place for everything. I used to chase my team on
-                            Discord, now I just check the Work Table. Saved my capstone project."</div>
+                        <p class="testimonial-text">Finally, one place for everything. I used to chase my team on
+                            Discord, now I just check the Work Table. Saved my capstone project.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">A</div>
-                            <div class="testimonial-info">
+                            <div class="author-details">
                                 <div class="testimonial-name">Ananya Sharma</div>
-                                <div class="testimonial-title">CS Senior, IIT Bombay</div>
+                                <div class="testimonial-role">CS Senior, IIT Bombay</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="testimonial-card">
-                        <div class="testimonial-quote">"The portfolio feature is clutch. I sent my public Startsphere
-                            link to a recruiter and they actually commented on how organized my work was."</div>
+                        <p class="testimonial-text">The portfolio feature is clutch. I sent my public Startsphere link
+                            to a recruiter and they actually commented on how organized my work was.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">R</div>
-                            <div class="testimonial-info">
+                            <div class="author-details">
                                 <div class="testimonial-name">Rahul Verma</div>
-                                <div class="testimonial-title">MechE Major, VIT Vellore</div>
+                                <div class="testimonial-role">MechE Major, VIT Vellore</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="testimonial-card">
-                        <div class="testimonial-quote">"Formatting PDF reports used to take me all night. With this, I
-                            just clicked 'Generate' 10 mins before the deadline. Lifesaver."</div>
+                        <p class="testimonial-text">Formatting PDF reports used to take me all night. With this, I just
+                            clicked 'Generate' 10 mins before the deadline. Lifesaver.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">S</div>
-                            <div class="testimonial-info">
+                            <div class="author-details">
                                 <div class="testimonial-name">Sneha Kapoor</div>
-                                <div class="testimonial-title">MBA Candidate, IIM Bangalore</div>
+                                <div class="testimonial-role">MBA Candidate, IIM Bangalore</div>
                             </div>
                         </div>
                     </div>
@@ -285,24 +319,24 @@
                     <h2 class="section-title">Frequently Asked Questions</h2>
                 </div>
 
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <h4 class="faq-question">Is it really free?</h4>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">Is it really free?</summary>
                         <p class="faq-answer">Yes! Startsphere is 100% free during our beta period. No credit card
                             required, no hidden fees.</p>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <h4 class="faq-question">Is my data secure?</h4>
+                    <details class="faq-item">
+                        <summary class="faq-question">Is my data secure?</summary>
                         <p class="faq-answer">Absolutely. We use enterprise-grade security with project-level isolation.
                             Only your team members can see your work.</p>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <h4 class="faq-question">When is the full launch?</h4>
+                    <details class="faq-item">
+                        <summary class="faq-question">When is the full launch?</summary>
                         <p class="faq-answer">We're aiming for early 2026. Beta testers get priority access to all new
                             features as they roll out.</p>
-                    </div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -350,7 +384,7 @@
                     <form class="signup-form"
                         onsubmit="event.preventDefault(); alert('Thank you for your interest! Beta invitations will be sent soon.'); this.reset();">
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <input type="email" id="email" name="email" placeholder="Enter your college email" required>
                             <button type="submit" class="btn btn-primary">Get Early Access</button>
                         </div>
                         <p class="form-note">Free during beta • No credit card • Unsubscribe anytime</p>
@@ -390,10 +424,7 @@
 
             <div class="footer-bottom">
                 <p class="footer-trust">
-                    Privacy-first • Your data stays yours
-                </p>
-                <p class="footer-trust">
-                    Built by students, for students
+                    Backed by enterprise-grade security and project-level isolation
                 </p>
                 <p class="footer-disclaimer">
                     ℹ️ This is a beta testing program. Features and availability are subject to change.
