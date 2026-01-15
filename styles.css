@@ -1082,3 +1082,20 @@ section {
 .testimonial-quote::before {
     content: none !important;
 }
+
+/* User overrides: Hide Testimonials & Enforce 2x2 Grid */
+#testimonials {
+    display: none !important;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
