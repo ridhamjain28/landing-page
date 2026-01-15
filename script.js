@@ -213,15 +213,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ================================
-    // Infinite Stacking Carousel
+    // Infinite Stacking Carousel (Bidirectional)
     // ================================
     const stackContainer = document.getElementById('stackCarousel');
     const nextBtn = document.getElementById('nextCardBtn');
+    const prevBtn = document.getElementById('prevCardBtn');
 
-    if (stackContainer && nextBtn) {
-        // Prevent rapid clicks
+    if (stackContainer && nextBtn && prevBtn) {
         let isAnimating = false;
 
+        // Next Button (Forward Shuffle)
         nextBtn.addEventListener('click', () => {
             if (isAnimating) return;
             isAnimating = true;
@@ -229,20 +230,46 @@ document.addEventListener('DOMContentLoaded', function () {
             const cards = stackContainer.querySelectorAll('.stack-card');
             if (cards.length > 0) {
                 const frontCard = cards[0];
-
-                // 1. Animate Out
                 frontCard.classList.add('exit');
 
-                // 2. Move to Back after transition
                 setTimeout(() => {
                     stackContainer.appendChild(frontCard);
                     frontCard.classList.remove('exit');
-                    // Reset styling/state if needed
                     isAnimating = false;
-
-                    // Refresh Lucide icons if needed (though DOM move usually keeps them)
                     if (window.lucide) window.lucide.createIcons();
-                }, 400); // Matches .stack-card.exit transition duration
+                }, 400);
+            }
+        });
+
+        // Previous Button (Reverse Shuffle)
+        prevBtn.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const cards = stackContainer.querySelectorAll('.stack-card');
+            if (cards.length > 0) {
+                const lastCard = cards[cards.length - 1];
+
+                // 1. Setup: Position off-screen left using class
+                lastCard.classList.add('enter-left');
+
+                // 2. Move to front of DOM (becomes visual front due to CSS :nth-child(1))
+                // However, 'enter-left' overrides the transform to keep it off-screen
+                stackContainer.prepend(lastCard);
+
+                // 3. Force Reflow to ensure 'enter-left' is applied before removing
+                void lastCard.offsetWidth;
+
+                // 4. Animate In (Remove 'enter-left', transitions to :nth-child(1) styles)
+                requestAnimationFrame(() => {
+                    lastCard.classList.remove('enter-left');
+                });
+
+                // 5. Cleanup
+                setTimeout(() => {
+                    isAnimating = false;
+                    if (window.lucide) window.lucide.createIcons();
+                }, 400); // Wait for transition
             }
         });
     }
