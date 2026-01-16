@@ -533,6 +533,51 @@ function scrollToElement(element, offset = 0) {
     });
 }
 
+// ================================
+// Content Protection
+// ================================
+
+// Prevent right-click context menu
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// Prevent keyboard shortcuts for copying, saving, printing
+document.addEventListener('keydown', function(e) {
+    // Ctrl+C, Ctrl+X, Ctrl+V, Ctrl+S, Ctrl+P, Ctrl+A, Ctrl+U
+    if (e.ctrlKey && (
+        e.key === 'c' || e.key === 'C' ||
+        e.key === 'x' || e.key === 'X' ||
+        e.key === 'v' || e.key === 'V' ||
+        e.key === 's' || e.key === 'S' ||
+        e.key === 'p' || e.key === 'P' ||
+        e.key === 'a' || e.key === 'A' ||
+        e.key === 'u' || e.key === 'U'
+    )) {
+        e.preventDefault();
+        return false;
+    }
+    // PrintScreen key
+    if (e.key === 'PrintScreen') {
+        e.preventDefault();
+        return false;
+    }
+    // F12 Developer Tools
+    if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// Prevent drag and drop of images
+document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+    }
+});
+
 // Export for potential use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
