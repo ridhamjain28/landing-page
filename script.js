@@ -282,27 +282,74 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ================================
-    // Infinite Stacking Carousel
+    // Stacking Carousel - Desktop & Mobile
     // ================================
     const stackCards = Array.from(document.querySelectorAll('.stack-card'));
+    const stackNextBtnDesktop = document.getElementById('stackNextBtnDesktop');
+    const stackPrevBtnDesktop = document.getElementById('stackPrevBtnDesktop');
     const stackNextBtn = document.getElementById('stackNextBtn');
+    const stackPrevBtn = document.getElementById('stackPrevBtn');
+    const stackDots = document.querySelectorAll('.stack-dot');
 
-    if (stackCards.length > 0 && stackNextBtn) {
-        // Internal state of positions [0, 1, 2, 3...]
-        let cardIndices = stackCards.map((_, i) => i);
+    if (stackCards.length > 0) {
+        const totalCards = stackCards.length;
+        let currentIndex = 0;
+        let isAnimating = false;
         
         // Initial setup
         updateStackPositions();
+        updateNavigationState();
 
-        stackNextBtn.addEventListener('click', () => {
-            rotateCarousel();
+        // Desktop: Prev button
+        if (stackPrevBtnDesktop) {
+            stackPrevBtnDesktop.addEventListener('click', () => {
+                if (!isAnimating && currentIndex > 0) {
+                    goToCard(currentIndex - 1, 'prev');
+                }
+            });
+        }
+        
+        // Desktop: Next button
+        if (stackNextBtnDesktop) {
+            stackNextBtnDesktop.addEventListener('click', () => {
+                if (!isAnimating && currentIndex < totalCards - 1) {
+                    goToCard(currentIndex + 1, 'next');
+                }
+            });
+        }
+        
+        // Mobile: Next button
+        if (stackNextBtn) {
+            stackNextBtn.addEventListener('click', () => {
+                if (!isAnimating && currentIndex < totalCards - 1) {
+                    goToCard(currentIndex + 1, 'next');
+                }
+            });
+        }
+        
+        // Mobile: Prev button
+        if (stackPrevBtn) {
+            stackPrevBtn.addEventListener('click', () => {
+                if (!isAnimating && currentIndex > 0) {
+                    goToCard(currentIndex - 1, 'prev');
+                }
+            });
+        }
+        
+        // Dot click navigation
+        stackDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                if (!isAnimating && index !== currentIndex) {
+                    const direction = index > currentIndex ? 'next' : 'prev';
+                    goToCard(index, direction);
+                }
+            });
         });
         
-        // Add swipe functionality for mobile
+        // Swipe functionality
         let touchStartX = 0;
         let touchEndX = 0;
         
-        // Add touch event listeners to the carousel container
         const carouselContainer = document.querySelector('.stack-carousel-container');
         if (carouselContainer) {
             carouselContainer.addEventListener('touchstart', e => {
@@ -316,47 +363,93 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         function handleSwipe() {
-            const swipeThreshold = 50; // Minimum distance to trigger swipe
+            const swipeThreshold = 50;
             
             if (touchStartX - touchEndX > swipeThreshold) {
                 // Swipe left - next card
-                rotateCarousel();
+                if (currentIndex < totalCards - 1) {
+                    goToCard(currentIndex + 1, 'next');
+                }
             } else if (touchEndX - touchStartX > swipeThreshold) {
-                // Swipe right - previous card (if you want to implement)
-                // For now, we'll just rotate in the same direction
-                rotateCarousel();
+                // Swipe right - previous card
+                if (currentIndex > 0) {
+                    goToCard(currentIndex - 1, 'prev');
+                }
             }
         }
         
-        function rotateCarousel() {
-            // 1. Animate Front Card Out
-            const frontCardIndex = cardIndices[0];
-            const frontCard = stackCards[frontCardIndex];
-
-            frontCard.classList.add('exit-animation');
-
-            // 2. Wait for animation, then rotate
-            setTimeout(() => {
-                frontCard.classList.remove('exit-animation');
-
-                // Rotate array: First becomes last
-                const first = cardIndices.shift();
-                cardIndices.push(first);
-
-                // 3. Update DOM attributes to reflect new positions
+        // Unified card navigation for both desktop and mobile
+        function goToCard(targetIndex, direction) {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            const currentCard = stackCards[currentIndex];
+            const targetCard = stackCards[targetIndex];
+            
+            if (direction === 'next') {
+                // Going forward: current card exits right, target rises from stack
+                currentCard.classList.add('exit-right');
+                
+                setTimeout(() => {
+                    currentCard.classList.remove('exit-right');
+                    currentIndex = targetIndex;
+                    updateStackPositions();
+                    updateNavigationState();
+                    isAnimating = false;
+                }, 400);
+            } else {
+                // Going back: target card enters from right (where it exited to)
+                // First update positions so target is in front but off-screen
+                currentIndex = targetIndex;
                 updateStackPositions();
-            }, 300); // 300ms matches halfway through CSS transition for smoothness
+                
+                // Start target off-screen to the right
+                targetCard.classList.add('enter-from-right');
+                
+                // Force reflow to ensure the class is applied
+                void targetCard.offsetWidth;
+                
+                // Remove class to trigger animation back to position
+                requestAnimationFrame(() => {
+                    targetCard.classList.remove('enter-from-right');
+                    targetCard.classList.add('entering');
+                    
+                    setTimeout(() => {
+                        targetCard.classList.remove('entering');
+                        updateNavigationState();
+                        isAnimating = false;
+                    }, 400);
+                });
+            }
         }
 
         function updateStackPositions() {
-            cardIndices.forEach((cardIndex, posIndex) => {
-                const card = stackCards[cardIndex];
-                card.setAttribute('data-pos', posIndex);
-
-                // Ensure z-index follows position (lower pos = higher z)
-                // CSS handles z-index, but we can enforce if needed. 
-                // data-pos handling in CSS is sufficient.
+            stackCards.forEach((card, index) => {
+                const pos = index - currentIndex;
+                
+                if (pos < 0) {
+                    card.setAttribute('data-pos', '3');
+                } else if (pos >= 0 && pos <= 3) {
+                    card.setAttribute('data-pos', pos);
+                } else {
+                    card.setAttribute('data-pos', '3');
+                }
             });
+        }
+        
+        function updateNavigationState() {
+            // Update dots
+            stackDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // Update mobile button states
+            if (stackPrevBtn) stackPrevBtn.disabled = currentIndex === 0;
+            if (stackNextBtn) stackNextBtn.disabled = currentIndex === totalCards - 1;
+            
+            // Update desktop button states
+            if (stackPrevBtnDesktop) stackPrevBtnDesktop.disabled = currentIndex === 0;
+            if (stackNextBtnDesktop) stackNextBtnDesktop.disabled = currentIndex === totalCards - 1;
         }
     }
 

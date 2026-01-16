@@ -2003,24 +2003,21 @@ img.loaded {
     z-index: 10;
     transform: scale(1) translate(0, 0);
     opacity: 1;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-    /* Blue Glow */
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
     border-color: var(--color-primary);
 }
 
 .stack-card[data-pos="1"] {
     z-index: 9;
     transform: scale(0.95) translate(20px, -20px);
-    /* Up and Right */
-    opacity: 0.6;
+    opacity: 0.7;
     box-shadow: var(--shadow-sm);
 }
 
 .stack-card[data-pos="2"] {
     z-index: 8;
     transform: scale(0.90) translate(40px, -40px);
-    /* Further Up and Right */
-    opacity: 0.3;
+    opacity: 0.4;
     box-shadow: none;
 }
 
@@ -2028,87 +2025,223 @@ img.loaded {
     z-index: 7;
     transform: scale(0.85) translate(60px, -60px);
     opacity: 0;
-    /* Hidden */
     pointer-events: none;
     box-shadow: none;
 }
 
-/* Exit Animation */
-.stack-card.exit-animation {
-    transform: translateX(120%) rotate(10deg);
-    opacity: 0;
+/* Card exits to the right (when going NEXT) */
+.stack-card.exit-right {
+    transform: translateX(120%) rotate(6deg) !important;
+    opacity: 0 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 100 !important;
 }
 
-/* Navigation Button */
-.stack-next-btn {
+/* Card starts off-screen right (before entering when going PREV) */
+.stack-card.enter-from-right {
+    transform: translateX(120%) rotate(6deg) !important;
+    opacity: 0 !important;
+    transition: none !important;
+    z-index: 10 !important;
+}
+
+/* Card animates back to position (when going PREV) */
+.stack-card.entering {
+    transform: scale(1) translate(0, 0) !important;
+    opacity: 1 !important;
+    transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1) !important;
+    z-index: 10 !important;
+}
+
+/* Desktop Navigation - Hide mobile nav, show side buttons */
+.stack-navigation {
+    display: none;
+}
+
+/* Desktop Prev/Next Buttons - Symmetrical on sides */
+.stack-prev-btn-desktop,
+.stack-next-btn-desktop {
     position: absolute;
-    right: -80px;
     top: 50%;
     transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
+    background: var(--color-bg-card);
+    border: 2px solid var(--border-color);
     color: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 20;
 }
 
+.stack-prev-btn-desktop {
+    left: -80px;
+}
+
+.stack-next-btn-desktop {
+    right: -80px;
+}
+
+.stack-prev-btn-desktop:hover,
+.stack-next-btn-desktop:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.stack-prev-btn-desktop:focus,
+.stack-next-btn-desktop:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.stack-prev-btn-desktop:disabled,
+.stack-next-btn-desktop:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.stack-prev-btn-desktop:disabled:hover,
+.stack-next-btn-desktop:disabled:hover {
+    transform: translateY(-50%);
+    box-shadow: var(--shadow-md);
+}
+
+/* Mobile Navigation Buttons */
+.stack-prev-btn,
+.stack-next-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-bg-card);
+    border: 2px solid var(--border-color);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.stack-prev-btn:hover,
+.stack-next-btn:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    transform: scale(1.1);
+}
+
+.stack-prev-btn:focus,
 .stack-next-btn:focus {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-.stack-next-btn:hover {
+.stack-prev-btn:disabled,
+.stack-next-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: scale(1);
+}
+
+/* Pagination Dots - Polished pill style */
+.stack-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-color);
+}
+
+.stack-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+}
+
+.stack-dot:hover {
+    background: rgba(59, 130, 246, 0.5);
+    transform: scale(1.3);
+}
+
+.stack-dot.active {
     background: var(--color-primary);
-    color: white;
-    box-shadow: 0 0 20px var(--color-primary-light);
-    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+    transform: scale(1.3);
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    /* Hide desktop buttons, show mobile navigation */
+    .stack-prev-btn-desktop,
+    .stack-next-btn-desktop {
+        display: none;
+    }
+    
+    .stack-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+        padding: 0 var(--spacing-md);
+    }
+    
     .stack-wrapper {
-        height: 360px;
+        height: auto;
+        min-height: 320px;
         width: 100%;
         padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-
+    
+    .stack-cards {
+        height: 280px;
+        width: 100%;
+    }
+    
+    .stack-prev-btn,
     .stack-next-btn {
-        position: relative; /* Changed to relative to appear below cards */
-        right: auto;
-        bottom: auto;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50px;
-        height: 50px;
-        z-index: 20;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .stack-next-btn:hover {
-        transform: translateX(-50%) scale(1.1);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        width: 44px;
+        height: 44px;
     }
 
     .stack-card {
         padding: var(--spacing-lg);
     }
     
-    /* Adjust carousel container */
     .stack-carousel-container {
         padding-bottom: var(--spacing-lg);
     }
     
-    /* Add margin to move button below the wrapper */
-    .stack-wrapper {
-        margin-bottom: var(--spacing-lg);
+    .stack-dot {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .stack-dots {
+        padding: 8px 16px;
+        gap: 8px;
     }
 }

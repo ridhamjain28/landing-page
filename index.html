@@ -82,7 +82,7 @@
         <section class="hero-image-section">
             <div class="container">
                 <div class="hero-image-container">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/dashboard_overview.jpg" alt="Startsphere Dashboard" class="hero-image" loading="lazy">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/dashboard_overview.webp" alt="Startsphere Dashboard" class="hero-image" loading="lazy">
                 </div>
             </div>
         </section>
@@ -139,9 +139,29 @@
                             </div>
                         </div>
 
-                        <button class="stack-next-btn" id="stackNextBtn" aria-label="Next Card">
+                        <!-- Desktop: Prev/Next buttons on sides -->
+                        <button class="stack-prev-btn-desktop" id="stackPrevBtnDesktop" aria-label="Previous Card">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button class="stack-next-btn-desktop" id="stackNextBtnDesktop" aria-label="Next Card">
                             <i data-lucide="chevron-right"></i>
                         </button>
+                        
+                        <!-- Mobile: Navigation with dots -->
+                        <div class="stack-navigation">
+                            <button class="stack-prev-btn" id="stackPrevBtn" aria-label="Previous Card">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <div class="stack-dots" id="stackDots">
+                                <span class="stack-dot active" data-dot="0"></span>
+                                <span class="stack-dot" data-dot="1"></span>
+                                <span class="stack-dot" data-dot="2"></span>
+                                <span class="stack-dot" data-dot="3"></span>
+                            </div>
+                            <button class="stack-next-btn" id="stackNextBtn" aria-label="Next Card">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,7 +220,7 @@
                             <span class="screenshot-label">Screenshot: Work Table</span>
                         </div>
                         <div class="feature-visual">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/work_table_kanban.jpg" alt="Startsphere Work Table" class="feature-image" loading="lazy">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/work_table_kanban.webp" alt="Startsphere Work Table" class="feature-image" loading="lazy">
                         </div>
                     </div>
 
@@ -214,7 +234,7 @@
                             <span class="screenshot-label">Screenshot: Portfolio Dashboard</span>
                         </div>
                         <div class="feature-visual">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/dashboard_overview.jpg" alt="Startsphere Portfolio Dashboard"
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/dashboard_overview.webp" alt="Startsphere Portfolio Dashboard"
                                 class="feature-image" loading="lazy">
                         </div>
                     </div>
@@ -229,7 +249,7 @@
                             <span class="screenshot-label">Screenshot: Team Chat</span>
                         </div>
                         <div class="feature-visual">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/conference_room_chat.jpg" alt="Startsphere Real-Time Chat"
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/conference_room_chat.webp" alt="Startsphere Real-Time Chat"
                                 class="feature-image" loading="lazy">
                         </div>
                     </div>
@@ -244,7 +264,7 @@
                             <span class="screenshot-label">Screenshot: Report Preview</span>
                         </div>
                         <div class="feature-visual">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/project_report_preview.jpg" alt="Startsphere PDF Report"
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/project_report_preview.webp" alt="Startsphere PDF Report"
                                 class="feature-image" loading="lazy">
                         </div>
                     </div>
