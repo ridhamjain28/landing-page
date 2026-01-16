@@ -24,6 +24,10 @@
         content="Automatically track every contribution your team makes. Prove who did what for grades, competitions, and portfolios. Join 500+ student teams in beta.">
 
     <title>Startsphere - Never Lose Credit for Your Work Again</title>
+    
+    <!-- Preload hero image for instant display -->
+    <link rel="preload" href="imgs/dashboard_overview.webp" as="image" type="image/webp">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -82,7 +86,7 @@
         <section class="hero-image-section">
             <div class="container">
                 <div class="hero-image-container">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/dashboard_overview.webp" alt="Startsphere Dashboard" class="hero-image" loading="lazy">
+                    <img src="imgs/dashboard_overview.webp" alt="Startsphere Dashboard" class="hero-image" loading="eager" fetchpriority="high">
                 </div>
             </div>
         </section>
