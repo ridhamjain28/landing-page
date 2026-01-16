@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description"
         content="Never lose credit for your work again. Startsphere automatically tracks every contribution so student teams can prove who did what for grades, competitions, and portfolios. Join 500+ teams in beta.">
     <meta name="keywords"
@@ -27,7 +27,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="mobile-first">
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+    
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav-menu" id="mobileNavMenu">
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-close">
+                <button id="closeMobileMenu" aria-label="Close navigation menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="#hero" class="instant-scroll">Home</a></li>
+                <li><a href="#features" class="instant-scroll">Features</a></li>
+                <li><a href="#audience" class="instant-scroll">For Teams</a></li>
+                <li><a href="#beta-form" class="instant-scroll">Join Beta</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero">
@@ -56,7 +82,7 @@
         <section class="hero-image-section">
             <div class="container">
                 <div class="hero-image-container">
-                    <img src="imgs/dashboard_overview.jpg" alt="Startsphere Dashboard" class="hero-image">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/dashboard_overview.jpg" alt="Startsphere Dashboard" class="hero-image" loading="lazy">
                 </div>
             </div>
         </section>
@@ -120,8 +146,8 @@
                 </div>
             </div>
         </section>
-
-        <!-- Problem Section -->
+<!-- 
+        
         <section id="problems" class="problem-section">
             <div class="container">
                 <div class="section-header">
@@ -146,15 +172,10 @@
                         <p><strong>Portfolio Gaps</strong> – You built something great, but can't show what you actually
                             contributed.</p>
                     </div>
-
-                    <div class="problem-card compact-card">
-                        <span class="problem-icon"><i data-lucide="alert-triangle"></i></span>
-                        <p><strong>Competition Disputes</strong> – Judges can't tell who did what. Neither can your
-                            team.</p>
-                    </div>
                 </div>
             </div>
         </section>
+-->
 
         <!-- Solution Bridge -->
         <!-- Solution Bridge Removed -->
@@ -179,7 +200,7 @@
                             <span class="screenshot-label">Screenshot: Work Table</span>
                         </div>
                         <div class="feature-visual">
-                            <img src="imgs/work_table_kanban.jpg" alt="Startsphere Work Table" class="feature-image">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/work_table_kanban.jpg" alt="Startsphere Work Table" class="feature-image" loading="lazy">
                         </div>
                     </div>
 
@@ -193,8 +214,8 @@
                             <span class="screenshot-label">Screenshot: Portfolio Dashboard</span>
                         </div>
                         <div class="feature-visual">
-                            <img src="imgs/dashboard_overview.jpg" alt="Startsphere Portfolio Dashboard"
-                                class="feature-image">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/dashboard_overview.jpg" alt="Startsphere Portfolio Dashboard"
+                                class="feature-image" loading="lazy">
                         </div>
                     </div>
 
@@ -208,8 +229,8 @@
                             <span class="screenshot-label">Screenshot: Team Chat</span>
                         </div>
                         <div class="feature-visual">
-                            <img src="imgs/conference_room_chat.jpg" alt="Startsphere Real-Time Chat"
-                                class="feature-image">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/conference_room_chat.jpg" alt="Startsphere Real-Time Chat"
+                                class="feature-image" loading="lazy">
                         </div>
                     </div>
 
@@ -223,8 +244,8 @@
                             <span class="screenshot-label">Screenshot: Report Preview</span>
                         </div>
                         <div class="feature-visual">
-                            <img src="imgs/project_report_preview.jpg" alt="Startsphere PDF Report"
-                                class="feature-image">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="imgs/project_report_preview.jpg" alt="Startsphere PDF Report"
+                                class="feature-image" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -402,14 +423,6 @@
                             <li><a href="#features" class="smooth-scroll">How It Works</a></li>
                             <li><a href="#benefits" class="smooth-scroll">Join Beta</a></li>
                             <li><a href="#beta-form">Beta Sign Up</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><a href="mailto:hello@startsphere.com">hello@startsphere.com</a></li>
-                            <li><a href="mailto:support@startsphere.com">support@startsphere.com</a></li>
                         </ul>
                     </div>
                 </div>

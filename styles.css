@@ -98,24 +98,26 @@ h6 {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 2.5rem);
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
 }
 
 h4 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
 }
 
 p {
     margin-bottom: var(--spacing-sm);
     color: var(--color-text-main);
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 a {
@@ -333,6 +335,109 @@ section {
 /* ======================================
    Section Headers
    ====================================== */
+
+/* ========================================= */
+/*       MOBILE-FOCUSED SECTION OPTIMIZATIONS */
+/* ========================================= */
+@media (max-width: 768px) {
+    /* Hero section optimizations */
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-xl) 0;
+        padding-bottom: var(--spacing-lg);
+    }
+    
+    .hero-container {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .hero-content {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-cta-container {
+        margin-top: var(--spacing-lg);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        width: 100%;
+    }
+    
+    /* Better spacing for mobile */
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Problem section optimizations */
+    .problem-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Features section optimizations */
+    .features-list {
+        gap: var(--spacing-xl);
+    }
+    
+    .feature-row {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .feature-row.reverse {
+        flex-direction: column;
+    }
+    
+    .feature-visual {
+        order: -1; /* Show image first on mobile */
+    }
+    
+    /* Testimonials optimizations */
+    .testimonials-grid {
+        gap: var(--spacing-md);
+    }
+    
+    /* FAQ optimizations */
+    .faq-list {
+        gap: var(--spacing-sm);
+    }
+    
+    /* Beta section optimizations */
+    .beta-benefits {
+        gap: var(--spacing-md);
+    }
+    
+    /* Footer optimizations */
+    .footer-content {
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screen optimizations */
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .trust-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Smaller spacing on very small screens */
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+}
+
+/* ========================================= */
 .section-header {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
@@ -1107,6 +1212,333 @@ section {
 }
 
 /* ========================================= */
+/*       MOBILE-FIRST DESIGN APPROACH        */
+/* ========================================= */
+
+/* Start with mobile defaults */
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-first typography */
+h1 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Mobile-first layout containers */
+.container {
+    width: 100%;
+    padding: 0 var(--spacing-md);
+    margin: 0 auto;
+}
+
+section {
+    padding: 2.5rem 0;
+}
+
+/* Mobile-first cards and content */
+.problem-card,
+.feature-card,
+.benefit-item,
+.audience-card {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ========================================= */
+/*       MOBILE RESPONSIVE BREAKPOINTS       */
+/* ========================================= */
+@media (min-width: 481px) {
+    /* Tablet and small desktop adjustments */
+    .container {
+        max-width: 800px;
+        padding: 0 var(--spacing-lg);
+    }
+    
+    section {
+        padding: 3.5rem 0;
+    }
+    
+    h1 {
+        font-size: clamp(2.2rem, 4vw, 2.8rem);
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-cta {
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
+    
+    .btn {
+        width: auto;
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Desktop layout */
+    .container {
+        max-width: 1200px;
+        padding: 0 var(--spacing-lg);
+    }
+    
+    section {
+        padding: 5rem 0;
+    }
+    
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    /* Desktop-specific layouts */
+    .cta-buttons {
+        flex-direction: row;
+        gap: var(--spacing-md);
+        width: auto;
+    }
+    
+    .btn-full-mobile {
+        width: auto;
+    }
+    
+    .testimonials-grid,
+    .faq-grid,
+    .problem-grid,
+    .features-grid,
+    .audience-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* ========================================= */
+/*       TOUCH TARGET OPTIMIZATIONS          */
+/* ========================================= */
+@media (max-width: 768px) {
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 1.1rem 1.8rem;
+    }
+    
+    a,
+    button,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .stack-next-btn {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+    }
+}
+
+/* ========================================= */
+/*       ACCESSIBILITY ENHANCEMENTS          */
+/* ========================================= */
+@media (max-width: 768px) {
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus,
+    a:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+    
+    /* Touch interface optimizations */
+    .btn:active {
+        transform: scale(0.95);
+    }
+    
+    /* Reduce motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+/* ========================================= */
+/*       MOBILE NAVIGATION MENU              */
+/* ========================================= */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 1001;
+    width: 48px;
+    height: 48px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-text-main);
+}
+
+.mobile-nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--color-bg-main);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    overflow-y: auto;
+}
+
+.mobile-nav-menu.active {
+    left: 0;
+}
+
+.mobile-nav-content {
+    padding: var(--spacing-lg);
+    height: 100%;
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+}
+
+.mobile-nav-close button {
+    background: none;
+    border: none;
+    color: var(--color-text-main);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.mobile-nav-list a {
+    display: block;
+    padding: var(--spacing-md);
+    color: var(--color-text-main);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+
+.mobile-nav-list a:hover {
+    background: var(--surface-color-hover);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+/* ========================================= */
+/*       MOBILE-FRIENDLY FORM ELEMENTS       */
+/* ========================================= */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        width: 100%;
+    }
+    
+    .form-group input[type="email"] {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+        padding: 1.1rem 1.25rem;
+        font-size: 1.1rem; /* Larger text for readability */
+        min-height: 48px; /* Minimum touch target size */
+        border-radius: var(--radius-pill);
+    }
+    
+    .form-group .btn {
+        min-height: 48px;
+        padding: 1.1rem 1.8rem;
+    }
+    
+    .form-note {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+    
+    /* Increase form container spacing */
+    .beta-form-content {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Better spacing for mobile forms */
+    .signup-form {
+        margin-top: var(--spacing-md);
+    }
+}
+
+/* ========================================= */
+/*       IMAGE LAZY LOADING STYLES           */
+/* ========================================= */
+img[data-src] {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* ========================================= */
 /*       USER REQUESTED REFINEMENTS          */
 /* ========================================= */
 
@@ -1435,23 +1867,55 @@ section {
     }
 }
 
-/* Mobile: Disable Sticky */
+/* Mobile: Enable Sticky with vertical layout */
 @media (max-width: 768px) {
-    .feature-row {
+    .features-list {
         position: relative;
-        top: auto !important;
-        margin-bottom: var(--spacing-xl);
-        background: transparent;
-        /* Option: remove card style on mobile? Or keep card style? 
-                                    Keeping card style is better for consistency. */
+    }
+    
+    .feature-row {
+        position: sticky;
+        flex-direction: column;
+        margin-bottom: var(--spacing-3xl);
         background: var(--surface-color);
-        padding: 0;
-        border: none;
-        box-shadow: none;
+        padding: var(--spacing-lg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    /* Adjusted sticky offsets for mobile */
+    .feature-row:nth-child(1) {
+        top: 60px;
+    }
+    
+    .feature-row:nth-child(2) {
+        top: 80px;
+    }
+    
+    .feature-row:nth-child(3) {
+        top: 100px;
+    }
+    
+    .feature-row:nth-child(4) {
+        top: 120px;
     }
 
     .feature-row.reverse {
-        flex-direction: column-reverse;
+        flex-direction: column;
+    }
+    
+    .feature-content {
+        order: 2;
+    }
+    
+    .feature-visual {
+        order: 1;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .feature-visual img {
+        border-radius: var(--radius-md);
     }
 }
 
@@ -1596,6 +2060,11 @@ section {
     z-index: 20;
 }
 
+.stack-next-btn:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 .stack-next-btn:hover {
     background: var(--color-primary);
     color: white;
@@ -1612,20 +2081,34 @@ section {
     }
 
     .stack-next-btn {
-        right: 0;
-        bottom: -70px;
-        top: auto;
+        position: relative; /* Changed to relative to appear below cards */
+        right: auto;
+        bottom: auto;
+        top: 20px;
         left: 50%;
         transform: translateX(-50%);
         width: 50px;
         height: 50px;
+        z-index: 20;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .stack-next-btn:hover {
         transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
     }
 
     .stack-card {
         padding: var(--spacing-lg);
+    }
+    
+    /* Adjust carousel container */
+    .stack-carousel-container {
+        padding-bottom: var(--spacing-lg);
+    }
+    
+    /* Add margin to move button below the wrapper */
+    .stack-wrapper {
+        margin-bottom: var(--spacing-lg);
     }
 }

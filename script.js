@@ -1,10 +1,56 @@
 // ================================
+// Mobile Detection and Optimizations
+// ================================
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+// ================================
 // Smooth Scroll Functionality
 // ================================
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Mobile-specific optimizations
+    if (isMobile) {
+        document.body.classList.add('is-mobile');
+    }
+    
+    // Mobile Navigation Menu
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNavMenu = document.getElementById('mobileNavMenu');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    
+    if (mobileMenuToggle && mobileNavMenu && closeMobileMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileNavMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+        
+        closeMobileMenu.addEventListener('click', function() {
+            mobileNavMenu.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = mobileNavMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+            
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileNavMenu.contains(event.target) && 
+                !mobileMenuToggle.contains(event.target) && 
+                mobileNavMenu.classList.contains('active')) {
+                mobileNavMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+        
     // Smooth scroll for anchor links
-    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#beta-form"])');
+    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#beta-form"]):not(.instant-scroll)');
 
     smoothScrollLinks.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -24,6 +70,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Instant scroll for links that bypass sticky animations (like beta-form from mobile nav)
+    const instantScrollLinks = document.querySelectorAll('.instant-scroll');
+    
+    instantScrollLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            e.preventDefault();
+            
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Instant jump - no smooth scroll behavior
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'instant'
                 });
             }
         });
@@ -221,8 +290,45 @@ document.addEventListener('DOMContentLoaded', function () {
     if (stackCards.length > 0 && stackNextBtn) {
         // Internal state of positions [0, 1, 2, 3...]
         let cardIndices = stackCards.map((_, i) => i);
+        
+        // Initial setup
+        updateStackPositions();
 
         stackNextBtn.addEventListener('click', () => {
+            rotateCarousel();
+        });
+        
+        // Add swipe functionality for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        // Add touch event listeners to the carousel container
+        const carouselContainer = document.querySelector('.stack-carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            carouselContainer.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+        }
+        
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimum distance to trigger swipe
+            
+            if (touchStartX - touchEndX > swipeThreshold) {
+                // Swipe left - next card
+                rotateCarousel();
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                // Swipe right - previous card (if you want to implement)
+                // For now, we'll just rotate in the same direction
+                rotateCarousel();
+            }
+        }
+        
+        function rotateCarousel() {
             // 1. Animate Front Card Out
             const frontCardIndex = cardIndices[0];
             const frontCard = stackCards[frontCardIndex];
@@ -240,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 3. Update DOM attributes to reflect new positions
                 updateStackPositions();
             }, 300); // 300ms matches halfway through CSS transition for smoothness
-        });
+        }
 
         function updateStackPositions() {
             cardIndices.forEach((cardIndex, posIndex) => {
@@ -261,6 +367,47 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('%c🚀 Startsphere Landing Page', 'font-size: 20px; font-weight: bold; color: #667eea;');
     console.log('%cThe digital trail for every team\'s effort', 'font-size: 14px; color: #6b7280;');
     console.log('%cInterested in beta testing? Click any "Join Beta Testing" button!', 'font-size: 12px; color: #764ba2;');
+
+    // ================================
+    // LAZY LOADING IMAGES
+    // ================================
+    
+    // Check if Intersection Observer is supported
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    // Only load if data-src exists
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        
+                        // Add loaded class for CSS transitions
+                        img.classList.add('loaded');
+                        
+                        // Stop observing this image
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '50px 0px', // Load 50px before entering viewport
+            threshold: 0.01
+        });
+        
+        // Observe all images with data-src
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    } else {
+        // Fallback for browsers that don't support Intersection Observer
+        // Load all images immediately
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+        });
+    }
 
 });
 
